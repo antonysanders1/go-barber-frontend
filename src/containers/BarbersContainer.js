@@ -1,20 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import NewBarberForm from '../components/NewBarberForm';
 import Barber from '../components/Barber';
-import {connect} from 'react-redux';
-import {fetchBarber} from '../actions/fetchBarber'
+import { connect } from 'react-redux';
+import { loginBarber } from '../actions/userActions'
 
 class BarbersContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchBarber()
+        this.props.loginBarber()
     }
 
     render() {
-        return (
-            <div>
-                <NewBarberForm/>
-                <Barber barber={this.props.barber}/>
+        return ( <div>
+            <NewBarberForm/>
+            <Barber barber = { this.props.barber }/> 
             </div>
         )
     }
@@ -27,4 +26,4 @@ const mapState = state => {
     }
 }
 
-export default connect(mapState, {fetchBarber})(BarbersContainer);
+export default connect(mapState, { loginBarber })(BarbersContainer);

@@ -1,11 +1,14 @@
-export default function barberReducer(state = { barber: [] }, action) {
+export default function barberReducer(state = { barber: {}, loggedIn: false, error: "" }, action) {
     switch (action.type) {
-        case 'FETCH_BARBERS':
-            return {barber: action.payload}
-    
+        case 'LOGIN_BARBER':
+            return { barber: action.payload, loggedIn: true }
+
+        case 'LOGIN_ERROR':
+            return {...state, loginError: action.error}
+
         default:
             return state
-          
+
     }
 
 

@@ -1,27 +1,16 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import BarbersContainer from './containers/BarbersContainer';
+import Main from './components/Main';
 
 
 class App extends Component {
 
-  componentDidMount() {
-  }
-
   render(){
     return (
       <div className="App">
-        App
-        <BarbersContainer/>
+          <Main/>  
       </div>
     )
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     barber: state.barber
-//   }
-// }
-
-export default connect()(App);
+export default App;
